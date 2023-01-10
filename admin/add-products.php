@@ -21,26 +21,22 @@ $products = getProducts();
                             <th> image </th>
                             <th> price </th>
                             <th> Discount </th>
-                            <th colspan="2"> buttons</th>
+                            <th> buttons</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($products as $product) {
-                            ?>
                         <tr>
-                            <td><?= $product['id'] ?></td>
-                            <td><?= $product['name'] ?></td>
-                            <td><?= $product['description'] ?></td>
-                            <td> <img src="<?= BASE_PATH . $product['image_url'] ?>" width="150px" height="150px"></td>
-                            <td><?= $product['price'] ?></td>
-                            <td><?= $product['discount']*100 ?>%</td>
-                            <td><button type="button" class="btn btn-primary">Add</button></td>
-                            <td><button type="button" class="btn btn-danger">delete</button></td>
-                            <td><button type="button" class="btn btn-success">edit</button></td>
+                            <form action="<?php BASE_PATH . 'data/products' ?>" method="post" enctype="multipart/form-data">
+                            <td><input type="text" name="" id=""></td>
+                            <td><input type="text" name="product-name"></td>
+                            <td><input type="text" name="description"></td>                          
+                            <td><input type="file" id="myFile" name="filename"></td>
+                            <td><input type="text" name="price"></td>
+                            <td><input type="text" name="discount"></td>
+                            <td><button type="submit" class="btn btn-primary">Add</button></td>
 
+                            </form>
                         </tr>
-                        <?php }
-                            ?>
                     </tbody>
                 </table>
 

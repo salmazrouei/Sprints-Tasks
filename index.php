@@ -131,7 +131,7 @@ $categories = getCategories();
                     </div>
                     <div class="flex-fill pl-3">
                         <h6><?= $category['name'] ?></h6>
-                        <small class="text-body"><?= $category['product_count'] ?> Products</small>
+                        <small class="text-body">100 Products</small>
                     </div>
                 </div>
             </a>
@@ -147,14 +147,38 @@ $categories = getCategories();
         <span class="bg-secondary pr-3">Featured Products</span>
     </h2>
     <div class="row px-xl-5">
-        <?php
-        foreach ($products as $product) {
-            if (!$product['is_featured']) {
-                continue;
-            }
-            echo display_product($product);
-        }
+        <?php foreach($products as $product){
+            if($product['is_featured']){
         ?>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="<?= $product['image_url'] ?>" alt="" />
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href="#"
+                            onclick="addSingleProductToCart({id:1,name:'product-1',price:123,image:'/img/product-1.jpg'})"><i
+                                class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href="#"><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href="#"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href=""><?= $product['name'] ?></a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5><?= $product['price'] - $product['price'] * $product['discount'] ?></h5>
+                        <h6 class="text-muted ml-2"><del><?= $product['price'] ?></del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <?php
+                        stars($product['rating'])
+                        ?>
+                        <small><?= $product['rating_count'] ?></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php }} ?>
     </div>
 </div>
 
@@ -183,21 +207,72 @@ $categories = getCategories();
     </div>
 </div>
 
-<div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
-        <span class="bg-secondary pr-3">Recent Products</span>
-    </h2>
+<div class="row px-xl-5">
+        <?php foreach ($products as $recent) {
+            if ($recent['is_recent']) {
+                ?>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="<?= $recent['image_url'] ?>" alt="" />
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href=""><?= $recent['name'] ?></a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5><?= $recent['price'] - $recent['price'] * $recent['discount'] ?></h5>
+                        <h6 class="text-muted ml-2"><del><?= $recent['price'] ?></del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <?php
+                        stars($recent['rating'])
+                        ?>
+                        <small><?= $recent['rating_count'] ?></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php }}?>
+    </div>
+</div>
+
+<div class="container-fluid py-5">
     <div class="row px-xl-5">
-        <?php
-        foreach ($products as $product) {
-            if (!$product['is_recent']) {
-                continue;
-            }
-            echo display_product($product);
-        }
-        ?>
+        <div class="col">
+            <div class="owl-carousel vendor-carousel">
+                <div class="bg-light p-4">
+                    <img src="vendor-1.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-2.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-3.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-4.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-5.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-6.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-7.jpg" alt="" />
+                </div>
+                <div class="bg-light p-4">
+                    <img src="vendor-8.jpg" alt="" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
-<?php require('./layouts/footer.php'); ?>
+<?php require(BASE_PATH . 'layouts/footer.php'); ?>
