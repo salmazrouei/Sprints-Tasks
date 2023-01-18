@@ -11,7 +11,7 @@ if ($_REQUEST) {
     }
 }
 ?>
-
+<!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
@@ -23,7 +23,9 @@ if ($_REQUEST) {
         </div>
     </div>
 </div>
+<!-- Breadcrumb End -->
 
+<!-- Checkout Start -->
 <form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
     <div class="container-fluid">
         <div class="row px-xl-5">
@@ -64,22 +66,22 @@ if ($_REQUEST) {
                         <div class="col-md-6 form-group">
                             <label>Country</label>
                             <select class="custom-select">
-                                <option selected>UAE</option>
+                                <option selected>Egypt</option>
                                 <option>USA</option>
-                                <option>Europe</option>
+                                <option>Algeria</option>
                             </select>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>City</label>
-                            <input class="form-control" type="text" placeholder="Dubai">
+                            <input class="form-control" type="text" placeholder="New York">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>State</label>
-                            <input class="form-control" type="text" placeholder="Dubai">
+                            <input class="form-control" type="text" placeholder="New York">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="000">
+                            <input class="form-control" type="text" placeholder="123">
                         </div>
                         <div class="col-md-12 form-group">
                             <div class="custom-control custom-checkbox">
@@ -130,22 +132,22 @@ if ($_REQUEST) {
                                 <label>Country</label>
                                 <select class="custom-select">
                                     <option selected>United States</option>
-                                    <option>United Arab Emirates</option>
-                                    <option>KSA</option>
-                                    <option>Europe</option>
+                                    <option>Afghanistan</option>
+                                    <option>Albania</option>
+                                    <option>Algeria</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>City</label>
-                                <input class="form-control" type="text" placeholder="Dubai">
+                                <input class="form-control" type="text" placeholder="New York">
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>State</label>
-                                <input class="form-control" type="text" placeholder="Dubai">
+                                <input class="form-control" type="text" placeholder="New York">
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>ZIP Code</label>
-                                <input class="form-control" type="text" placeholder="000">
+                                <input class="form-control" type="text" placeholder="123">
                             </div>
                         </div>
                     </div>
@@ -177,13 +179,13 @@ if ($_REQUEST) {
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
-                            
+                            <!-- <h6 class="font-weight-medium">$10</h6> -->
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                          
+                            <!-- <h5>$160</h5> -->
                         </div>
                     </div>
                 </div>
@@ -217,6 +219,6 @@ if ($_REQUEST) {
         </div>
     </div>
 </form>
-
+<!-- Checkout End -->
 
 <?php require_once('./layouts/footer.php') ?>

@@ -1,4 +1,4 @@
-
+ <!-- Footer Start -->
  <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
       <div class="row px-xl-5 pt-5">
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -8,13 +8,14 @@
             et dolor sed dolor. Rebum tempor no vero est magna amet no
           </p>
           <p class="mb-2">
-            <i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, Dubai, UAE
+            <i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street,
+            New York, USA
           </p>
           <p class="mb-2">
             <i class="fa fa-envelope text-primary mr-3"></i>info@example.com
           </p>
           <p class="mb-0">
-            <i class="fa fa-phone-alt text-primary mr-3"></i>971 5455 67890
+            <i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890
           </p>
         </div>
         <div class="col-lg-8 col-md-12">
@@ -111,23 +112,29 @@
           </p>
         </div>
         <div class="col-md-6 px-xl-0 text-center text-md-right">
-          <img class="img-fluid" src="payments.png" alt="" />
+          <img class="img-fluid" src="img/payments.png" alt="" />
         </div>
       </div>
     </div>
+    <!-- Footer End -->
 
+    <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"
       ><i class="fa fa-angle-double-up"></i
     ></a>
 
-
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
 
-
-
-    <script src="main.js"></script>
-    <script src="home.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
